@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="github,Hexo框架,next主题,Git,Node.js," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="网站配置注册github账号 注册账号：piercefantasy 创建仓库：piercefantasy.github.io  本地配置Git下载安装 下载：https:&#x2F;&#x2F;git-scm.com&#x2F;downloads 安装：双击安装包，一路点Next 检验：鼠标右键会有 Git Bash Here，这是Git的命令行  Nodejs下载安装 下载：https:&#x2F;&#x2F;nodejs.org&#x2F;zh-cn&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博客搭建记录">
+<meta property="og:url" content="http://example.com/2023/06/09/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="piercefantasy">
+<meta property="og:description" content="网站配置注册github账号 注册账号：piercefantasy 创建仓库：piercefantasy.github.io  本地配置Git下载安装 下载：https:&#x2F;&#x2F;git-scm.com&#x2F;downloads 安装：双击安装包，一路点Next 检验：鼠标右键会有 Git Bash Here，这是Git的命令行  Nodejs下载安装 下载：https:&#x2F;&#x2F;nodejs.org&#x2F;zh-cn&#x2F;">
+<meta property="og:locale">
+<meta property="article:published_time" content="2023-06-08T17:54:01.000Z">
+<meta property="article:modified_time" content="2023-06-08T18:32:26.594Z">
+<meta property="article:author" content="pierce">
+<meta property="article:tag" content="github">
+<meta property="article:tag" content="Hexo框架">
+<meta property="article:tag" content="next主题">
+<meta property="article:tag" content="Git">
+<meta property="article:tag" content="Node.js">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://example.com/2023/06/09/博客搭建记录/"/>
+
+
+
+
+
+  <title>博客搭建记录 | piercefantasy</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">piercefantasy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/09/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="piercefantasy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">博客搭建记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-06-09T01:54:01+08:00">
+                2023-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  5.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  19 mins.
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="网站配置"><a href="#网站配置" class="headerlink" title="网站配置"></a>网站配置</h1><h2 id="注册github账号"><a href="#注册github账号" class="headerlink" title="注册github账号"></a>注册github账号</h2><ul>
+<li>注册账号：piercefantasy</li>
+<li>创建仓库：piercefantasy.github.io</li>
+</ul>
+<h1 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h1><h2 id="Git下载安装"><a href="#Git下载安装" class="headerlink" title="Git下载安装"></a>Git下载安装</h2><ul>
+<li>下载：<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
+<li>安装：双击安装包，一路点Next</li>
+<li>检验：鼠标右键会有 Git Bash Here，这是Git的命令行</li>
+</ul>
+<h2 id="Nodejs下载安装"><a href="#Nodejs下载安装" class="headerlink" title="Nodejs下载安装"></a>Nodejs下载安装</h2><ul>
+<li>下载：<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download">https://nodejs.org/zh-cn/download</a></li>
+<li>安装：双击安装包，一路点Next</li>
+<li>检验：<ul>
+<li>node：打开cmd窗口，执行命令 node -v 查看node版本 v18.16.0</li>
+<li>npm：在安装node的同时也安装了npm，执行 npm -v 查看npm版本 9.5.1</li>
+</ul>
+</li>
+</ul>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><ul>
+<li>建立博客文件夹：Blog（右键点击GitBash，打开git的控制台窗口，以后所有操作都在git控制台进行）</li>
+<li>安装Hexo：<ul>
+<li>安装：npm install hexo-cli -g</li>
+<li>检验：hexo -v</li>
+</ul>
+</li>
+<li>初始化文件夹：hexo init</li>
+<li>安装必备组件：<ul>
+<li>npm install</li>
+<li>npm i hexo-deployer-git</li>
+<li>npm install hexo-deployer-git –save</li>
+<li>npm i hexo-renderer-swig</li>
+</ul>
+</li>
+<li>综合指令：hexo clean &amp;&amp; hexo g &amp;&amp; hexo s –debug<ul>
+<li>清理遗留信息：hexo clean</li>
+<li>生成静态网页：hexo g</li>
+<li>打开本地服务器：hexo s –debug</li>
+</ul>
+</li>
+<li>浏览器打开本地网页：<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a></li>
+</ul>
+<h1 id="连接网站Github与本地"><a href="#连接网站Github与本地" class="headerlink" title="连接网站Github与本地"></a>连接网站Github与本地</h1><h2 id="github-→-Git"><a href="#github-→-Git" class="headerlink" title="github → Git"></a>github → Git</h2><p>在命令行中输入如下命令，配置Git用户名和邮箱地址（连接Github与本地）</p>
+<ul>
+<li>git config –global user.name “piercefantasy”</li>
+<li>git config –global user.email “<a href="mailto:&#x32;&#x35;&#56;&#48;&#x33;&#x30;&#x36;&#52;&#57;&#x32;&#x40;&#113;&#x71;&#x2e;&#99;&#111;&#x6d;">&#x32;&#x35;&#56;&#48;&#x33;&#x30;&#x36;&#52;&#57;&#x32;&#x40;&#113;&#x71;&#x2e;&#99;&#111;&#x6d;</a>“</li>
+</ul>
+<h2 id="Git→github"><a href="#Git→github" class="headerlink" title="Git→github"></a>Git→github</h2><p>在命令行中输入如下命令，本地SSH keys保存到github</p>
+<ul>
+<li>ssh-keygen -t rsa -C “<a href="mailto:&#x32;&#x35;&#x38;&#48;&#x33;&#48;&#x36;&#52;&#57;&#x32;&#x40;&#113;&#x71;&#46;&#x63;&#x6f;&#109;">&#x32;&#x35;&#x38;&#48;&#x33;&#48;&#x36;&#52;&#57;&#x32;&#x40;&#113;&#x71;&#46;&#x63;&#x6f;&#109;</a>“</li>
+<li>cat ~&#x2F;.ssh&#x2F;id_rsa.pub</li>
+<li>内容：ssh-rsa ···&#x3D; <a href="mailto:&#50;&#53;&#x38;&#48;&#51;&#x30;&#x36;&#52;&#57;&#50;&#64;&#113;&#x71;&#46;&#x63;&#x6f;&#109;">&#50;&#53;&#x38;&#48;&#51;&#x30;&#x36;&#52;&#57;&#50;&#64;&#113;&#x71;&#46;&#x63;&#x6f;&#109;</a></li>
+<li>打开网址<a target="_blank" rel="noopener" href="https://github.com/settings/keys">https://github.com/settings/keys</a> ，New SSH key，填入上段内容</li>
+<li>检验成功与否：ssh -T <a href="mailto:&#x67;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#109;">&#x67;&#x69;&#116;&#x40;&#x67;&#x69;&#x74;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#109;</a></li>
+</ul>
+<h2 id="github→博客配置"><a href="#github→博客配置" class="headerlink" title="github→博客配置"></a>github→博客配置</h2><ul>
+<li>github获取token：Settings→Developer settings→tokens (classic)</li>
+<li>配置博客_config.yml文件，这是博客的配置，修改最后一行的配置：<br>deploy:<br>type: git<br>repo: <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#x6f;&#x6d;">&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#x63;&#x6f;&#x6d;</a>:piercefantasy&#x2F;piercefantasy.github.io.git<br>branch: main<br>token: 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</li>
+</ul>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><ul>
+<li>新建<ul>
+<li>新建文章：hexo new post “article title”</li>
+<li>新建草稿：hexo new draft “draft title”</li>
+<li>新建页面：hexo new page “page title”</li>
+</ul>
+</li>
+<li>上传：<ul>
+<li>综合指令：hexo clean &amp;&amp; hexo g &amp;&amp; hexo d<ul>
+<li>生成静态网页：hexo generate</li>
+<li>本地预览效果：hexo server</li>
+<li>上传到github：hexo deploy</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="next主题配置"><a href="#next主题配置" class="headerlink" title="next主题配置"></a>next主题配置</h1><h2 id="基本标签配置"><a href="#基本标签配置" class="headerlink" title="基本标签配置"></a>基本标签配置</h2><p>hexo new page “tags”</p>
+<p>title: tages<br>date: 2023-06-08 23:17:13<br>type: “tags”<br>comments: true</p>
+<h2 id="基本目录配置"><a href="#基本目录配置" class="headerlink" title="基本目录配置"></a>基本目录配置</h2><p>hexo new page “categories”</p>
+<p>title: categories<br>date: 2023-06-08 23:18:26<br>type: “categories”<br>comments: true</p>
+<h2 id="主题文件配置"><a href="#主题文件配置" class="headerlink" title="主题文件配置"></a>主题文件配置</h2><p>menu:<br>  home: &#x2F;|| home<br>  #about: &#x2F;about&#x2F;|| user<br>  categories: &#x2F;categories&#x2F;|| th<br>  tags: &#x2F;tags&#x2F;|| tags<br>  archives: &#x2F;archives&#x2F;|| archive<br>  #schedule: &#x2F;schedule&#x2F;|| calendar<br>  #sitemap: &#x2F;sitemap.xml|| sitemap<br>  #commonweal: &#x2F;404&#x2F;|| heartbeat</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/github/" rel="tag"># github</a>
+          
+            <a href="/tags/Hexo%E6%A1%86%E6%9E%B6/" rel="tag"># Hexo框架</a>
+          
+            <a href="/tags/next%E4%B8%BB%E9%A2%98/" rel="tag"># next主题</a>
+          
+            <a href="/tags/Git/" rel="tag"># Git</a>
+          
+            <a href="/tags/Node-js/" rel="tag"># Node.js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%AB%99%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">网站配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E5%86%8Cgithub%E8%B4%A6%E5%8F%B7"><span class="nav-number">1.1.</span> <span class="nav-text">注册github账号</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">本地配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.</span> <span class="nav-text">Git下载安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nodejs%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85"><span class="nav-number">2.2.</span> <span class="nav-text">Nodejs下载安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Hexo"><span class="nav-number">2.3.</span> <span class="nav-text">安装Hexo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E7%BD%91%E7%AB%99Github%E4%B8%8E%E6%9C%AC%E5%9C%B0"><span class="nav-number">3.</span> <span class="nav-text">连接网站Github与本地</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#github-%E2%86%92-Git"><span class="nav-number">3.1.</span> <span class="nav-text">github → Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git%E2%86%92github"><span class="nav-number">3.2.</span> <span class="nav-text">Git→github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github%E2%86%92%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE"><span class="nav-number">3.3.</span> <span class="nav-text">github→博客配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">3.4.</span> <span class="nav-text">测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#next%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">next主题配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A0%87%E7%AD%BE%E9%85%8D%E7%BD%AE"><span class="nav-number">4.1.</span> <span class="nav-text">基本标签配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE"><span class="nav-number">4.2.</span> <span class="nav-text">基本目录配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">4.3.</span> <span class="nav-text">主题文件配置</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">pierce</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
