@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="模拟人生4DLC众多,如果我们在游戏中想要暂时关闭一些DLC,可以采用以下以下方法: 手动版: (1)找到模拟人生4的安装位置  图1 这是我的位置,每个人位置不一样  图2 如果你不知道位置,可以右键选中模拟人生4的快捷方式点击打开文件所在的位置  图3 点击图3红框处按钮若干次(大概2次),可以看到模拟人生4的安装位置,如图1所示 (2)将你想要关闭的DLC对应的文件夹名称加上.disable">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模拟人生4DLC打开与关闭-用EXCEL宏实现">
+<meta property="og:url" content="http://example.com/2023/06/18/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4DLC%E6%89%93%E5%BC%80%E4%B8%8E%E5%85%B3%E9%97%AD-%E7%94%A8EXCEL%E5%AE%8F%E5%AE%9E%E7%8E%B0/index.html">
+<meta property="og:site_name" content="piercefantasy">
+<meta property="og:description" content="模拟人生4DLC众多,如果我们在游戏中想要暂时关闭一些DLC,可以采用以下以下方法: 手动版: (1)找到模拟人生4的安装位置  图1 这是我的位置,每个人位置不一样  图2 如果你不知道位置,可以右键选中模拟人生4的快捷方式点击打开文件所在的位置  图3 点击图3红框处按钮若干次(大概2次),可以看到模拟人生4的安装位置,如图1所示 (2)将你想要关闭的DLC对应的文件夹名称加上.disable">
+<meta property="og:locale">
+<meta property="og:image" content="c:/Users/PC/OneDrive/Blog/public/images/3ae581a7fc264754a49778825013879cnoop.image_iz=58558&from=article.png">
+<meta property="og:image" content="c:/Users/PC/OneDrive/Blog/public/images/c33b0a03f811422786e46fb4a77e816anoop.image_iz=58558&from=article.png">
+<meta property="og:image" content="c:/Users/PC/OneDrive/Blog/public/images/ec53fdc5ae3343818b980feef3057d9cnoop.image_iz=58558&from=article.png">
+<meta property="og:image" content="c:/Users/PC/OneDrive/Blog/public/images/8cd5522385f04a959643b73ef1999cb3noop.image_iz=58558&from=article.png">
+<meta property="og:image" content="c:/Users/PC/OneDrive/Blog/public/images/419dfaafdb3d473c8554c7cdde3e3ec6noop.image_iz=58558&from=article.png">
+<meta property="og:image" content="c:/Users/PC/OneDrive/Blog/public/images/a9d67a436a444522a995d44326626361noop.image_iz=58558&from=article.png">
+<meta property="article:published_time" content="2023-06-18T06:18:13.000Z">
+<meta property="article:modified_time" content="2023-06-18T06:21:14.163Z">
+<meta property="article:author" content="pierce">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/PC/OneDrive/Blog/public/images/3ae581a7fc264754a49778825013879cnoop.image_iz=58558&from=article.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://example.com/2023/06/18/模拟人生4DLC打开与关闭-用EXCEL宏实现/"/>
+
+
+
+
+
+  <title>模拟人生4DLC打开与关闭-用EXCEL宏实现 | piercefantasy</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">piercefantasy</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/18/%E6%A8%A1%E6%8B%9F%E4%BA%BA%E7%94%9F4DLC%E6%89%93%E5%BC%80%E4%B8%8E%E5%85%B3%E9%97%AD-%E7%94%A8EXCEL%E5%AE%8F%E5%AE%9E%E7%8E%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="piercefantasy">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">模拟人生4DLC打开与关闭-用EXCEL宏实现</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-06-18T14:18:13+08:00">
+                2023-06-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>模拟人生4DLC众多,如果我们在游戏中想要暂时关闭一些DLC,可以采用以下以下方法:</p>
+<p>手动版:</p>
+<p>(1)找到模拟人生4的安装位置</p>
+<p><img src="C:/Users/PC/OneDrive/Blog/public/images/3ae581a7fc264754a49778825013879cnoop.image_iz=58558&from=article.png" alt="img"></p>
+<p>图1</p>
+<p>这是我的位置,每个人位置不一样</p>
+<p><img src="C:/Users/PC/OneDrive/Blog/public/images/c33b0a03f811422786e46fb4a77e816anoop.image_iz=58558&from=article.png" alt="img"></p>
+<p>图2</p>
+<p>如果你不知道位置,可以右键选中模拟人生4的快捷方式点击打开文件所在的位置</p>
+<p><img src="C:/Users/PC/OneDrive/Blog/public/images/ec53fdc5ae3343818b980feef3057d9cnoop.image_iz=58558&from=article.png" alt="img"></p>
+<p>图3</p>
+<p>点击图3红框处按钮若干次(大概2次),可以看到模拟人生4的安装位置,如图1所示</p>
+<p>(2)将你想要关闭的DLC对应的文件夹名称加上.disabled</p>
+<p>例如:EP12→EP12.disabled</p>
+<p><img src="C:/Users/PC/OneDrive/Blog/public/images/8cd5522385f04a959643b73ef1999cb3noop.image_iz=58558&from=article.png" alt="img"></p>
+<p>DLC及对应的文件夹如下:</p>
+<table>
+<thead>
+<tr>
+<th>EP01</th>
+<th>来去上班</th>
+<th>SP07</th>
+<th>童乐房间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>EP02</td>
+<td>同欢共乐</td>
+<td>SP08</td>
+<td>休闲后院</td>
+</tr>
+<tr>
+<td>EP03</td>
+<td>都会生活</td>
+<td>SP09</td>
+<td>复古经典</td>
+</tr>
+<tr>
+<td>EP04</td>
+<td>猫狗总动员</td>
+<td>SP10</td>
+<td>保龄球之夜</td>
+</tr>
+<tr>
+<td>EP05</td>
+<td>春夏秋冬</td>
+<td>SP11</td>
+<td>健身乐活</td>
+</tr>
+<tr>
+<td>EP06</td>
+<td>星梦起飞</td>
+<td>SP12</td>
+<td>幼儿</td>
+</tr>
+<tr>
+<td>EP07</td>
+<td>岛屿生活</td>
+<td>SP13</td>
+<td>快乐洗衣日</td>
+</tr>
+<tr>
+<td>EP08</td>
+<td>玩转大学</td>
+<td>SP14</td>
+<td>我的第一只宠物</td>
+</tr>
+<tr>
+<td>EP09</td>
+<td>绿色生活</td>
+<td>SP15</td>
+<td>Moschino</td>
+</tr>
+<tr>
+<td>EP10</td>
+<td>雪国胜地</td>
+<td>SP16</td>
+<td>温馨小居</td>
+</tr>
+<tr>
+<td>EP11</td>
+<td>乡间生活</td>
+<td>SP17</td>
+<td>巧手针织</td>
+</tr>
+<tr>
+<td>EP12</td>
+<td>高中岁月</td>
+<td>SP18</td>
+<td>灵异大追击</td>
+</tr>
+<tr>
+<td>FP01</td>
+<td>圣诞包</td>
+<td>SP20</td>
+<td>复古风潮</td>
+</tr>
+<tr>
+<td>GP01</td>
+<td>露天度假</td>
+<td>SP21</td>
+<td>乡村厨房</td>
+</tr>
+<tr>
+<td>GP02</td>
+<td>Spa Day</td>
+<td>SP22</td>
+<td>灰尘大作战</td>
+</tr>
+<tr>
+<td>GP03</td>
+<td>外出用餐</td>
+<td>SP23</td>
+<td>庭院绿洲</td>
+</tr>
+<tr>
+<td>GP04</td>
+<td>吸血鬼</td>
+<td>SP24</td>
+<td>时尚街区</td>
+</tr>
+<tr>
+<td>GP05</td>
+<td>生儿育女</td>
+<td>SP25</td>
+<td>都会工业风</td>
+</tr>
+<tr>
+<td>GP06</td>
+<td>丛林探险</td>
+<td>SP26</td>
+<td>仁川直送</td>
+</tr>
+<tr>
+<td>GP07</td>
+<td>诡奇小镇</td>
+<td>SP28</td>
+<td>摩登男装</td>
+</tr>
+<tr>
+<td>GP08</td>
+<td>魔法世界</td>
+<td>SP29</td>
+<td>锦簇之间</td>
+</tr>
+<tr>
+<td>GP09</td>
+<td>巴图星之旅</td>
+<td>SP30</td>
+<td>婚旅奇缘</td>
+</tr>
+<tr>
+<td>GP10</td>
+<td>婚旅奇缘</td>
+<td>SP31</td>
+<td>极繁美学</td>
+</tr>
+<tr>
+<td>GP11</td>
+<td>梦想家装</td>
+<td>SP32</td>
+<td>月色潮流</td>
+</tr>
+<tr>
+<td>GP12</td>
+<td>月影狼踪</td>
+<td>SP33</td>
+<td>小小露营家</td>
+</tr>
+<tr>
+<td>SP01</td>
+<td>豪华派对</td>
+<td>SP34</td>
+<td>孩童潮搭</td>
+</tr>
+<tr>
+<td>SP02</td>
+<td>完美露台</td>
+<td>SP35</td>
+<td>大漠奢华</td>
+</tr>
+<tr>
+<td>SP03</td>
+<td>冰酷厨房</td>
+<td>SP36</td>
+<td>粉彩狂想曲</td>
+</tr>
+<tr>
+<td>SP04</td>
+<td>毛骨悚然</td>
+<td>SP37</td>
+<td>生活小物</td>
+</tr>
+<tr>
+<td>SP05</td>
+<td>电影同乐</td>
+<td>SP38</td>
+<td>私密時尚</td>
+</tr>
+<tr>
+<td>SP06</td>
+<td>浪漫花园</td>
+<td>SP39</td>
+<td>浴室小物</td>
+</tr>
+</tbody></table>
+<p>自动版:</p>
+<p>因为每次都要一个个修改很麻烦,前段时间学了一点VBA,所以我做了个表自己用,如果有需要可以自取,</p>
+<p>开关.xlsm</p>
+<p>链接:<br><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1QLCnmcyZwREeICV2lUr3SQ?pwd=jrtt">https://pan.baidu.com/s/1QLCnmcyZwREeICV2lUr3SQ?pwd=jrtt</a></p>
+<p>提取码: jrtt</p>
+<p>开关.xlsm使用说明:</p>
+<p>1.把该文件放入图1所在位置</p>
+<p><img src="C:/Users/PC/OneDrive/Blog/public/images/419dfaafdb3d473c8554c7cdde3e3ec6noop.image_iz=58558&from=article.png" alt="img"></p>
+<p>2.双击打开,(允许宏),修改红框内(开|关),点应用开关按钮即可.</p>
+<p><img src="C:/Users/PC/OneDrive/Blog/public/images/a9d67a436a444522a995d44326626361noop.image_iz=58558&from=article.png" alt="img"></p>
+<p>其它:</p>
+<p>模拟人生4在不断更新,增加新的内容文件夹,可以在表格中新增行:A列文件夹名称,B列开关</p>
+<p>VBA代码</p>
+<figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Sub</span> Renamefile()</span><br><span class="line"></span><br><span class="line"><span class="keyword">Dim</span> i</span><br><span class="line">i = <span class="number">2</span></span><br><span class="line"><span class="keyword">Do</span> <span class="keyword">While</span> Range(<span class="string">&quot;A&quot;</span> &amp; i) &lt;&gt; <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">If</span> Range(<span class="string">&quot;B&quot;</span> &amp; i) = <span class="string">&quot;开&quot;</span> <span class="keyword">Then</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">If</span> Dir(ThisWorkbook.Path &amp; <span class="string">&quot;\&quot;</span> &amp; Range(<span class="string">&quot;A&quot;</span> &amp; i) &amp; <span class="string">&quot;.disabled&quot;</span>, <span class="number">16</span>) &lt;&gt; <span class="string">&quot;&quot;</span> <span class="keyword">Then</span></span><br><span class="line">            Name ThisWorkbook.Path &amp; <span class="string">&quot;\&quot;</span> &amp; Range(<span class="string">&quot;A&quot;</span> &amp; i) &amp; <span class="string">&quot;.disabled&quot;</span> <span class="keyword">As</span> _</span><br><span class="line">                 ThisWorkbook.Path &amp; <span class="string">&quot;\&quot;</span> &amp; Range(<span class="string">&quot;A&quot;</span> &amp; i)</span><br><span class="line">        <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">ElseIf</span> Range(<span class="string">&quot;B&quot;</span> &amp; i) = <span class="string">&quot;关&quot;</span> <span class="keyword">Then</span></span><br><span class="line">    </span><br><span class="line">        <span class="keyword">If</span> Dir(ThisWorkbook.Path &amp; <span class="string">&quot;\&quot;</span> &amp; Range(<span class="string">&quot;A&quot;</span> &amp; i), <span class="number">16</span>) &lt;&gt; <span class="string">&quot;&quot;</span> <span class="keyword">Then</span></span><br><span class="line">            Name ThisWorkbook.Path &amp; <span class="string">&quot;\&quot;</span> &amp; Range(<span class="string">&quot;A&quot;</span> &amp; i) <span class="keyword">As</span> _</span><br><span class="line">                 ThisWorkbook.Path &amp; <span class="string">&quot;\&quot;</span> &amp; Range(<span class="string">&quot;A&quot;</span> &amp; i) &amp; <span class="string">&quot;.disabled&quot;</span></span><br><span class="line">        <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"></span><br><span class="line">i = i + <span class="number">1</span></span><br><span class="line"><span class="keyword">Loop</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2023/06/18/%E5%A6%82%E4%BD%95%E9%80%9A%E8%BF%87%E8%BE%93%E5%85%A5%E6%B3%95%E6%89%93%E5%87%BA%E6%97%B6%E9%97%B4%E6%88%B3-%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95%E7%9F%AD%E8%AF%AD%E8%AE%BE%E7%BD%AE/" rel="next" title="如何通过输入法打出时间戳-搜狗输入法短语设置">
+                <i class="fa fa-chevron-left"></i> 如何通过输入法打出时间戳-搜狗输入法短语设置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2023/06/18/%E5%A6%82%E4%BD%95%E6%A1%8C%E9%9D%A2%E5%8F%B3%E9%94%AE%E6%96%B0%E5%BB%BA%E4%BB%BB%E6%84%8F%E5%90%8E%E7%BC%80%E6%96%87%E4%BB%B6-%E4%BB%A5onenote%E5%88%86%E5%8C%BA.one%E6%96%87%E4%BB%B6%E4%B8%BA%E4%BE%8B/" rel="prev" title="如何桌面右键新建任意后缀文件-以onenote分区.one文件为例">
+                如何桌面右键新建任意后缀文件-以onenote分区.one文件为例 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">pierce</span>
+
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
